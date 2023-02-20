@@ -8,7 +8,7 @@ GREEN = "#9bdeac"
 DARKER_GREEN = "#45634c"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 25
+WORK_MIN = 1
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
@@ -47,7 +47,6 @@ def start_timer():
         window.config(bg=YELLOW)
         canvas.config(bg=YELLOW)
         button_start.config(bg=YELLOW, fg=YELLOW)
-        button_reset.config(bg=YELLOW, fg=YELLOW)
         check_mark.config(bg=YELLOW)
         count_down(long_break_sec)
     elif reps % 2 == 0:
@@ -55,7 +54,6 @@ def start_timer():
         window.config(bg=YELLOW)
         canvas.config(bg=YELLOW)
         button_start.config(bg=YELLOW, fg=YELLOW)
-        button_reset.config(bg=YELLOW, fg=YELLOW)
         check_mark.config(bg=YELLOW)
         count_down(short_break_sec)
     else:
@@ -90,7 +88,6 @@ def count_down(count):
 window = tkinter.Tk()
 window.title("Pomodoro")
 window.config(padx=100, pady=50, bg=YELLOW)
-window.after(1000, count_down, )
 
 canvas = tkinter.Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
 image = tkinter.PhotoImage(file="tomato/tomato.png")
